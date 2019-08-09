@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"go.opencensus.io/trace"
+	"github.com/emahiro/appengine-plain-logger/spancontext"
 )
 
 const (
@@ -16,6 +16,12 @@ const (
 	LevelError    = "ERROR"
 	LevelCritical = "CRITICAL"
 )
+
+var projectID string
+
+func init() {
+	projectID = os.Getenv("GOOGLE_CLOUD_PROJECT")
+}
 
 // Debugf is output of debug level log
 func Debugf(ctx context.Context, format string, a ...interface{}) {
@@ -50,12 +56,12 @@ type jsonPayload struct {
 }
 
 func out(ctx context.Context, severity, format string, a ...interface{}) {
-	sc := trace.FromContext(ctx).SpanContext()
+	sc := spancontext.Get(ctx)
 	payload := &jsonPayload{
 		Severity: severity,
 		Message:  fmt.Sprintf(format, a),
-		Trace:    sc.TraceID.String(),
-		SpanID:   sc.SpanID.String(),
+		Trace:    fmt.Sprintf("projects/%s/traces/%s", projectID, sc.TraceID),
+		SpanID:   sc.SpanID,
 	}
 
 	json.NewEncoder(os.Stdout).Encode(payload)
