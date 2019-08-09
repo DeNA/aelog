@@ -24,7 +24,7 @@ func Debugf(ctx context.Context, format string, a ...interface{}) {
 	out(ctx, LevelDebug, format, a)
 }
 
-// Infof is output of infomation level log
+// Infof is output of information level log
 func Infof(ctx context.Context, format string, a ...interface{}) {
 	out(ctx, LevelInfo, format, a)
 }
