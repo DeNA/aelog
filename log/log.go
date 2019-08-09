@@ -17,11 +17,7 @@ const (
 	LevelCritical = "CRITICAL"
 )
 
-var projectID string
-
-func init() {
-	projectID = os.Getenv("GOOGLE_CLOUD_PROJECT")
-}
+var projectID = os.Getenv("GOOGLE_CLOUD_PROJECT")
 
 // Debugf is output of debug level log
 func Debugf(ctx context.Context, format string, a ...interface{}) {
