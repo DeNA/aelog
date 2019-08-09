@@ -9,39 +9,31 @@ import (
 	"github.com/emahiro/ae-plain-logger/spancontext"
 )
 
-const (
-	LevelDebug    = "DEBUG"
-	LevelInfo     = "INFO"
-	LevelWarning  = "WARNING"
-	LevelError    = "ERROR"
-	LevelCritical = "CRITICAL"
-)
-
 var projectID = os.Getenv("GOOGLE_CLOUD_PROJECT")
 
 // Debugf is output of debug level log
 func Debugf(ctx context.Context, format string, a ...interface{}) {
-	out(ctx, LevelDebug, format, a)
+	out(ctx, "DEBUG", format, a)
 }
 
 // Infof is output of information level log
 func Infof(ctx context.Context, format string, a ...interface{}) {
-	out(ctx, LevelInfo, format, a)
+	out(ctx, "INFO", format, a)
 }
 
 // Warningf is output of warning level log
 func Warningf(ctx context.Context, format string, a ...interface{}) {
-	out(ctx, LevelWarning, format, a)
+	out(ctx, "WARNING", format, a)
 }
 
 // Errorf is output of error level log
 func Errorf(ctx context.Context, format string, a ...interface{}) {
-	out(ctx, LevelError, format, a)
+	out(ctx, "ERROR", format, a)
 }
 
 // Criticalf is output of critical level log
 func Criticalf(ctx context.Context, format string, a ...interface{}) {
-	out(ctx, LevelCritical, format, a)
+	out(ctx, "CRITICAL", format, a)
 }
 
 type jsonPayload struct {
