@@ -1,2 +1,2 @@
-# App Engine Plane Logger
-TVD
+# App Engine Plain Logger
+This is Plain Logger for App Engine 2nd Generation
