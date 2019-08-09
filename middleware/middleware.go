@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/emahiro/appengine-plain-logger/spancontext"
+	"github.com/emahiro/ae-plain-logger/spancontext"
 )
 
 // MwAEPlainLogger is middleware for setting stackdrvier logging

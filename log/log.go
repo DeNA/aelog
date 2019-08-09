@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/emahiro/appengine-plain-logger/spancontext"
+	"github.com/emahiro/ae-plain-logger/spancontext"
 )
 
 const (
