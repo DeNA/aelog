@@ -8,13 +8,13 @@ import (
 	"go.opencensus.io/trace"
 )
 
-// AEPlainLogSpanContext is SpanContext struct of AppEnginePlainLogger
+// AEPlainLogSpanContext is SpanContext struct of AppEnginePlainLogger.
 type AEPlainLogSpanContext struct {
 	SpanID  string
 	TraceID string
 }
 
-// Get is method of get AEPlainLogSpanContext
+// Get is method of get AEPlainLogSpanContext.
 func Get(ctx context.Context) AEPlainLogSpanContext {
 	sc := trace.FromContext(ctx).SpanContext()
 	return AEPlainLogSpanContext{
@@ -23,7 +23,7 @@ func Get(ctx context.Context) AEPlainLogSpanContext {
 	}
 }
 
-// Set is method of set SpanContext in request
+// Set is method of set SpanContext in request.
 func Set(r *http.Request, label string) (context.Context, func()) {
 	ctx := r.Context()
 	span := new(trace.Span)
