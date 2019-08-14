@@ -8,7 +8,7 @@ import (
 
 // MwAEPlainLogger is middleware for setting stackdrvier logging.
 // In this log middleware, label is required.
-// If you don't set label, this log middleware return panic.
+// If you don't set label, this log middleware handle panic.
 func MwAEPlainLogger(label string) func(http.Handler) http.Handler {
 	return func(h http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
