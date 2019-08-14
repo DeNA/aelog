@@ -11,27 +11,29 @@ import (
 
 var projectID = os.Getenv("GOOGLE_CLOUD_PROJECT")
 
-// Debugf is output of debug level log.
+// Debugf formats its arguments according to the format, analogous to fmt.Printf,
+// and records the text as log message at debug level.
+// The log message will be associated with the platform request linked with the context.
 func Debugf(ctx context.Context, format string, a ...interface{}) {
 	out(ctx, "DEBUG", format, a)
 }
 
-// Infof is output of information level log.
+// Infof is like Debugf, but the severity is info level.
 func Infof(ctx context.Context, format string, a ...interface{}) {
 	out(ctx, "INFO", format, a)
 }
 
-// Warningf is output of warning level log.
+// Warningf is like Debugf, but the severity is warning level.
 func Warningf(ctx context.Context, format string, a ...interface{}) {
 	out(ctx, "WARNING", format, a)
 }
 
-// Errorf is output of error level log.
+// Errorf is like Debugf, but the severity is error level.
 func Errorf(ctx context.Context, format string, a ...interface{}) {
 	out(ctx, "ERROR", format, a)
 }
 
-// Criticalf is output of critical level log.
+// Criticalf is like Debugf, but the severity is critical level.
 func Criticalf(ctx context.Context, format string, a ...interface{}) {
 	out(ctx, "CRITICAL", format, a)
 }
