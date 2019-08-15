@@ -14,7 +14,7 @@ mux.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
     log.Infof("some log message)
 })
 
-h := middleware.AEPlainLogger("Vidar.ServeHTTP")(mux)
+h := middleware.AEPlainLogger("ServeHTTP")(mux)
 
 if err := http.ListenAndServe(fmt.Sprintf(":%s", port), h); err != nil {
     panic(err)
