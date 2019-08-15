@@ -12,7 +12,8 @@ App Engine Plain Logger only supports structured logging (ref: https://cloud.goo
 ```go
 mux := http.NewServeMux()
 mux.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
-    log.Infof("some log message)
+    ctx := request.Context()
+    log.Infof(ctx, "some log message)
 })
 
 h := middleware.AEPlainLogger("ServeHTTP")(mux)
