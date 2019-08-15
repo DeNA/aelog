@@ -4,26 +4,21 @@
 
 # App Engine Plain Logger
 This is Plain Logger for App Engine 2nd Generation.  
-App Engine Plain Logger only supports structured logging (ref: https://cloud.google.com/logging/docs/structured-logging), but does not support logging experience which proprietary App Engine API provided.
+App Engine Plain Logger only supports structured logging (ref: https://cloud.google.com/logging/docs/structured-logging), so this does not support logging experience which proprietary App Engine API provided.
 
 # How to use
 
 ```go
-
 mux := http.NewServeMux()
 mux.HandleFunc("/", func(writer http.ResponseWriter, request *http.Request) {
-    // some
+    log.Infof("some log message)
 })
 
-server := http.Server {
-    Addr: fmt.Sprintf(":%s", port)
-    Handler: middleware.MwAEPlainLogger("label")(mux)
-}
+h := middleware.AEPlainLogger("Vidar.ServeHTTP")(mux)
 
-if err := server.ListenAndServe(); err != nil {
-    log.Fatalf("shutdown server. err: %v", err)
+if err := http.ListenAndServe(fmt.Sprintf(":%s", port), h); err != nil {
+    panic(err)
 }
-
 ```
 
 # LICENSE
