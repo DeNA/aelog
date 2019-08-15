@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestMwAEPlainLogger(t *testing.T) {
+func TestAEPlainLogger(t *testing.T) {
 	tests := []struct {
 		name  string
 		label string
@@ -26,7 +26,7 @@ func TestMwAEPlainLogger(t *testing.T) {
 				}
 			}()
 
-			mux := MwAEPlainLogger(tt.label)(http.NewServeMux())
+			mux := AEPlainLogger(tt.label)(http.NewServeMux())
 			req := httptest.NewRequest(http.MethodGet, "/", nil)
 			rec := httptest.NewRecorder()
 			mux.ServeHTTP(rec, req)
