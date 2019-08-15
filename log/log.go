@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/emahiro/ae-plain-logger/spancontext"
+	"github.com/emahiro/ae-plain-logger/internal/spancontext"
 )
 
 var projectID = os.Getenv("GOOGLE_CLOUD_PROJECT")
