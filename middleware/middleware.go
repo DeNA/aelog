@@ -1,3 +1,6 @@
+/*
+Package middleware provides the http.Handler with spancontext.
+*/
 package middleware
 
 import (
