@@ -21,5 +21,5 @@ if err := http.ListenAndServe(fmt.Sprintf(":%s", port), h); err != nil {
 }
 ```
 
-# LICENSE
+# License
 MIT
