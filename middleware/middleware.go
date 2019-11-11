@@ -6,7 +6,7 @@ package middleware
 import (
 	"net/http"
 
-	"github.com/emahiro/ae-plain-logger/internal/spancontext"
+	"github.com/emahiro/aelog/internal/spancontext"
 )
 
 // AELogger is middleware to set spancontext in the context.
