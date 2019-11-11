@@ -16,7 +16,7 @@ func ExampleDebugf() {
 
 func ExampleInfof() {
 	ctx := trace.NewContext(context.Background(), nil)
-	Debugf(ctx, "Infof: %s", "Sample Text")
+	Infof(ctx, "Infof: %s", "Sample Text")
 
 	// Output:
 	// {"severity":"INFO","message":"Infof: Sample Text","logging.googleapis.com/trace":"projects//traces/00000000000000000000000000000000","logging.googleapis.com/spanId":"0000000000000000"}
