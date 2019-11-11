@@ -4,7 +4,7 @@ from within an App Engine application.
 
 Example:
 	ctx := r.Context() // r is *http.Request
-	log.Infof(ctx, "info log. requestURL: %s", r.URL.String())
+	aelog.Infof(ctx, "info log. requestURL: %s", r.URL.String())
 */
 package aelog
 
