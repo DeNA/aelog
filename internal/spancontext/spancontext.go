@@ -8,14 +8,14 @@ import (
 	"go.opencensus.io/trace"
 )
 
-type AEPlainLogSpanContext struct {
+type AELogSpanContext struct {
 	SpanID  string
 	TraceID string
 }
 
-func Get(ctx context.Context) AEPlainLogSpanContext {
+func Get(ctx context.Context) AELogSpanContext {
 	sc := trace.FromContext(ctx).SpanContext()
-	return AEPlainLogSpanContext{
+	return AELogSpanContext{
 		SpanID:  sc.SpanID.String(),
 		TraceID: sc.TraceID.String(),
 	}

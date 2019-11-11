@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func TestAEPlainLogger(t *testing.T) {
+func TestAELogger(t *testing.T) {
 	tests := []struct {
 		name  string
 		label string
@@ -26,7 +26,7 @@ func TestAEPlainLogger(t *testing.T) {
 				}
 			}()
 
-			mux := AEPlainLogger(tt.label)(http.NewServeMux())
+			mux := AELogger(tt.label)(http.NewServeMux())
 			req := httptest.NewRequest(http.MethodGet, "/", nil)
 			rec := httptest.NewRecorder()
 			mux.ServeHTTP(rec, req)
