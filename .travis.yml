@@ -5,7 +5,7 @@ go:
   - 1.13.x
 
 script:
-  - go test -v ./middleware/...
+  - go test -v ./...
 
 env:
   - GO111MODULE=on
