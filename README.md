@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/emahiro/ae-plain-logger.svg?branch=master)](https://travis-ci.org/emahiro/ae-plain-logger)
+[![Build Status](https://travis-ci.org/emahiro/aelog.svg?branch=master)](https://travis-ci.org/emahiro/ae-plain-logger)
 [![Go Report Card](https://goreportcard.com/badge/github.com/emahiro/ae-plain-logger)](https://goreportcard.com/report/github.com/emahiro/ae-plain-logger)
 [![GoDoc](https://godoc.org/github.com/emahiro/ae-plain-logger?status.svg)](https://godoc.org/github.com/emahiro/ae-plain-logger)
 
