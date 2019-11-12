@@ -39,8 +39,6 @@ func SetOutput(f func(context.Context, string, string, ...interface{})) {
 
 var std = &logger{out: OutputJSON}
 
-var projectID = os.Getenv("GOOGLE_CLOUD_PROJECT")
-
 // Debugf formats its arguments according to the format, analogous to fmt.Printf,
 // and records the text as log message at debug level.
 // The log message will be associated with the platform request linked with the context.
@@ -81,7 +79,7 @@ func OutputJSON(ctx context.Context, severity, format string, a ...interface{}) 
 	}{
 		Severity: severity,
 		Message:  fmt.Sprintf(format, a...),
-		Trace:    fmt.Sprintf("projects/%s/traces/%s", projectID, sc.TraceID),
+		Trace:    fmt.Sprintf("projects/%s/traces/%s", os.Getenv("GOOGLE_CLOUD_PROJECT"), sc.TraceID),
 		SpanID:   sc.SpanID,
 	}
 
