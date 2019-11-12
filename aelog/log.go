@@ -30,7 +30,7 @@ func (l *logger) output(ctx context.Context, severity, format string, a ...inter
 	l.out(ctx, severity, format, a...)
 }
 
-// SetOutput ...
+// SetOutput allows to set the log output format. The default log setting is json format.
 func SetOutput(f func(context.Context, string, string, ...interface{})) {
 	std.mu.Lock()
 	defer std.mu.Unlock()
@@ -68,7 +68,9 @@ func Criticalf(ctx context.Context, format string, a ...interface{}) {
 	std.output(ctx, "CRITICAL", format, a...)
 }
 
-// OutputJSON ...
+// OutputJSON fills the fields required with the structured log described in
+// https://cloud.google.com/logging/docs/agent/configuration#special-fields
+// and outputs the log in json format.
 func OutputJSON(ctx context.Context, severity, format string, a ...interface{}) {
 	sc := spancontext.Get(ctx)
 	payload := &struct {
@@ -86,7 +88,7 @@ func OutputJSON(ctx context.Context, severity, format string, a ...interface{}) 
 	json.NewEncoder(os.Stdout).Encode(payload)
 }
 
-// OutputText ...
+// OutputText outputs log using standard log package.
 func OutputText(ctx context.Context, severity, format string, a ...interface{}) {
 	log.Printf(severity+": "+format, a...)
 }
