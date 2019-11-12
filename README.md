@@ -1,13 +1,13 @@
-[![Build Status](https://travis-ci.org/emahiro/aelog.svg?branch=master)](https://travis-ci.org/emahiro/ae-plain-logger)
-[![Go Report Card](https://goreportcard.com/badge/github.com/emahiro/ae-plain-logger)](https://goreportcard.com/report/github.com/emahiro/ae-plain-logger)
-[![GoDoc](https://godoc.org/github.com/emahiro/ae-plain-logger?status.svg)](https://godoc.org/github.com/emahiro/ae-plain-logger)
+# App Engine Logger
 
+[![Build Status](https://travis-ci.org/emahiro/aelog.svg?branch=master)](https://travis-ci.org/emahiro/aelog)
+[![Go Report Card](https://goreportcard.com/badge/github.com/emahiro/aelog)](https://goreportcard.com/report/github.com/emahiro/aelog)
+[![GoDoc](https://godoc.org/github.com/emahiro/aelog?status.svg)](https://godoc.org/github.com/emahiro/aelog)
 
-# App Engine Plain Logger
-This is Plain Logger for App Engine 2nd Generation.  
-App Engine Plain Logger only supports structured logging (ref: https://cloud.google.com/logging/docs/structured-logging), so this does not support logging experience which proprietary App Engine API provided.
+This is Logger for App Engine 2nd Generation.
+App Engine Plain Logger only supports structured logging (ref: [https://cloud.google.com/logging/docs/structured-logging](https://cloud.google.com/logging/docs/structured-logging)), so this does not support logging experience which proprietary App Engine API provided.
 
-# How to use
+## How to use
 
 ```go
 mux := http.NewServeMux()
@@ -23,5 +23,6 @@ if err := http.ListenAndServe(fmt.Sprintf(":%s", port), h); err != nil {
 }
 ```
 
-# License
+## License
+
 MIT
