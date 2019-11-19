@@ -1,8 +1,8 @@
 # App Engine Logger
 
-[![Build Status](https://travis-ci.org/emahiro/aelog.svg?branch=master)](https://travis-ci.org/emahiro/aelog)
-[![Go Report Card](https://goreportcard.com/badge/github.com/emahiro/aelog)](https://goreportcard.com/report/github.com/emahiro/aelog)
-[![GoDoc](https://godoc.org/github.com/emahiro/aelog?status.svg)](https://godoc.org/github.com/emahiro/aelog)
+[![Build Status](https://travis-ci.org/DeNA/aelog.svg?branch=master)](https://travis-ci.org/DeNA/aelog)
+[![Go Report Card](https://goreportcard.com/badge/github.com/DeNA/aelog)](https://goreportcard.com/report/github.com/DeNA/aelog)
+[![GoDoc](https://godoc.org/github.com/DeNA/aelog?status.svg)](https://godoc.org/github.com/DeNA/aelog)
 
 This is Logger for App Engine 2nd Generation.
 App Engine Plain Logger only supports structured logging (ref: [https://cloud.google.com/logging/docs/structured-logging](https://cloud.google.com/logging/docs/structured-logging)), so this does not support logging experience which proprietary App Engine API provided.
