@@ -16,7 +16,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/emahiro/aelog/internal/spancontext"
+	"github.com/DeNA/aelog/internal/spancontext"
 )
 
 type logger struct {
