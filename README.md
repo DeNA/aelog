@@ -1,6 +1,5 @@
 # App Engine Logger
 
-[![Build Status](https://travis-ci.org/DeNA/aelog.svg?branch=master)](https://travis-ci.org/DeNA/aelog)
 [![Go Report Card](https://goreportcard.com/badge/github.com/DeNA/aelog)](https://goreportcard.com/report/github.com/DeNA/aelog)
 [![GoDoc](https://godoc.org/github.com/DeNA/aelog?status.svg)](https://godoc.org/github.com/DeNA/aelog)
 
