@@ -2,12 +2,12 @@ name: Go test
 on: [push]
 
 jobs:
-  build:
-    name: Build
-      strategy:
-        matrix:
-          go-versions: [1.14.x, 1.15.x]
-          platform: [ubuntu-latest]
+  test:
+    strategy:
+      matrix:
+        go-versions: [1.14.x, 1.15.x]
+        platform: [ubuntu-latest]
+    name: Test
     runs-on: ${{ matrix.platform }}
     steps:
       - name: Set up go
