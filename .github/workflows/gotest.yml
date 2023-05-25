@@ -1,5 +1,5 @@
 name: Go test
-on: [push]
+on: [ push ]
 
 jobs:
   test:
@@ -11,7 +11,7 @@ jobs:
           - 1.18.x
           - 1.19.x
           - 1.20.x
-        platform: [ubuntu-latest]
+        platform: [ ubuntu-latest ]
     name: Test
     runs-on: ${{ matrix.platform }}
     steps:
